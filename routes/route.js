@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 //api routes
 
-route.get("/users", Usercontroller.getalluser);
+route.get("/usersdata", Usercontroller.getalluser);
 route.post("/users", upload.single("profile"), Usercontroller.adduser);
 
 export default route;

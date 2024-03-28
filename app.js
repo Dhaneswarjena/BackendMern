@@ -25,7 +25,7 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.json([{ name: "Dhaneswarjena" }]);
 });
-app.use("/api/v1", route);
+app.use(route);
 app.listen(PORT, () => {
   console.log(`server working on ${PORT}`);
 });
