@@ -5,15 +5,14 @@ import cors from "cors";
 import route from "./routes/route.js";
 const app = express();
 dotenv.config();
+const run = async () => {
+  const valconect = await mongoose.connect(process.env.MONGODB_URI);
+  if (valconect) {
+    console.log("Connected to myDB");
+  }
+};
 
-mongoose
-  .connect(process.env.MONGODB_URI, {})
-  .then(() => {
-    console.log("Connected to MongoDB Atlas");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB Atlas:", error);
-  });
+run().catch((err) => console.error(err));
 
 const PORT = process.env.PORT || 8000;
 app.use(cors());
