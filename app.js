@@ -10,6 +10,7 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    bufferTimeoutMS: 30000,
   })
   .then(() => {
     console.log("Connected to MongoDB Atlas");

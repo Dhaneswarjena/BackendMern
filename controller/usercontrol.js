@@ -2,7 +2,7 @@ import usermodel from "../models/usermodel.js";
 
 class Usercontroller {
   static getalluser = async (req, res) => {
-    const getalluserdata = await usermodel.find({}).maxTimeMS(30000);
+    const getalluserdata = await usermodel.find({});
     if (getalluserdata) {
       return res.status(200).json(getalluserdata);
     } else {
@@ -13,7 +13,7 @@ class Usercontroller {
     const { name, email, gender, city } = req.body;
     try {
       if (name && email && gender && city) {
-        const isemail = await usermodel.findOne({ email }).maxTimeMS(30000);
+        const isemail = await usermodel.findOne({ email });
         if (!isemail) {
           const adduserprofile = usermodel({
             name,
