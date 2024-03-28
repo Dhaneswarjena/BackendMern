@@ -7,11 +7,7 @@ const app = express();
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    bufferTimeoutMS: 30000,
-  })
+  .connect(process.env.MONGODB_URI, {})
   .then(() => {
     console.log("Connected to MongoDB Atlas");
   })
