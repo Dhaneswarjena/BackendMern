@@ -8,7 +8,7 @@ dotenv.config();
 const run = async () => {
   const valconect = await mongoose.connect(process.env.MONGODB_URI);
   if (valconect) {
-    console.log("Connected to myDB");
+    console.log("Connected to my datqa base");
   }
 };
 
